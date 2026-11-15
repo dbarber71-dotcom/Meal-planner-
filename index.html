@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#245b45">
+<title>Family Tea Planner</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="eyebrow">LESS STRESS, CHEAPER TEAS</div>
+  <h1>Family Tea Planner</h1>
+  <p>Tell ChatGPT what your family likes and get a practical weekly plan.</p>
+</header>
+<main>
+  <section class="panel">
+    <h2>Your week</h2>
+    <label>How many people are you feeding?
+      <input id="people" type="number" min="1" max="12" value="4">
+    </label>
+    <label>Budget for 7 evening meals (£)
+      <input id="budget" type="number" min="10" max="300" value="50">
+    </label>
+    <label>Any dietary needs?
+      <input id="diet" type="text" placeholder="e.g. vegetarian, dairy-free, none">
+    </label>
+    <label>Foods your family dislikes
+      <textarea id="dislikes" rows="2" placeholder="e.g. mushrooms, fish, spicy food"></textarea>
+    </label>
+    <label>Meals or ingredients you'd like included
+      <textarea id="likes" rows="2" placeholder="e.g. chicken, pasta, jacket potatoes"></textarea>
+    </label>
+    <button id="make">Create my AI meal plan in ChatGPT</button>
+    <p class="hint">This opens ChatGPT with your request ready to send. No separate AI subscription or API key is needed, but you need access to ChatGPT.</p>
+  </section>
+  <section class="panel">
+    <h2>Save your plan here</h2>
+    <p class="hint">After ChatGPT creates your plan, copy its shopping list or notes and paste them below so you can keep them handy on this phone.</p>
+    <textarea id="saved" rows="9" placeholder="Paste your meal plan or shopping list here..."></textarea>
+    <div class="actions">
+      <button class="secondary" id="save">Save on this iPhone</button>
+      <button class="secondary" id="clear">Clear</button>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+  </section>
+</main>
+<footer>Tip: In Safari, use Share → Add to Home Screen to keep this planner on your iPhone.</footer>
+<script src="app.js"></script>
+</body>
+</html>
